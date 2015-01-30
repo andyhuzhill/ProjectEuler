@@ -9,20 +9,19 @@
 #
 # =============================================
 
-import numpy as np
-
 prime = []
-for i in range(0, 2000000):
+for i in xrange(0, 2000000):
     prime.append(i)
 
-for i in range(2, 2000000):
+for i in xrange(2, 2000000):
     n = 2
     while i*n < 2000000:
         prime[i*n] = 0
         n += 1
 
-for i in range(0, len(prime)):
-    print prime[i]
+sum = 0
+for i in xrange(2, len(prime)):
+    sum += prime[i]
 
-print np.sum(prime)
+print "sum={0}".format(sum)
 
